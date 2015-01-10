@@ -5,6 +5,20 @@ from __future__ import unicode_literals
 PLUGIN_PATHS = ['plugins/']
 PLUGINS=['sitemap', 'assets',]
 
+STATIC_PATHS = ['extras']
+EXTRA_PATH_METADATA = {
+        'extra/google69b9c0096934230f.html': 
+            {'path': 'google69b9c0096934230f.html',}}
+
+STATIC_PATHS = [
+    'extras',
+]
+# A list of extra files to copy from the source to the destination
+EXTRA_PATH_METADATA = {
+    'extras/google69b9c0096934230f.html': {'path': 'google69b9c0096934230f.html'},
+}
+
+
 SITEMAP = {
     'format': 'xml',
     'priorities': {
