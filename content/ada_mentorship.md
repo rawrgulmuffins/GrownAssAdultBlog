@@ -1,7 +1,7 @@
 Title: What I learned from being a Ada Mentor.
 Date: 2015-01-09
-Category: Mentorship,CodingCamps,Management,Teaching
-Tags: Mentorship
+Category: Mentorship
+Tags: Mentorship,CodingCamps,Management,Teaching
 Authors: Alex Lord
 Summary: "Soft" skills matter.
 
