@@ -1,6 +1,14 @@
-*.swp
-*.pyc
-cache/
+# python ignores
 __pycache__/
-output/
+cache/
+*.pyc
+
+# vim ignores
+*.sw
+*.sw
+*.sw*
 *.pid
+*.swp
+
+# pelican ignores
+output/

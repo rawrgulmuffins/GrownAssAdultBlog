@@ -10,15 +10,6 @@ EXTRA_PATH_METADATA = {
         'extra/google69b9c0096934230f.html': 
             {'path': 'google69b9c0096934230f.html',}}
 
-STATIC_PATHS = [
-    'extras',
-]
-# A list of extra files to copy from the source to the destination
-EXTRA_PATH_METADATA = {
-    'extras/google69b9c0096934230f.html': {'path': 'google69b9c0096934230f.html'},
-}
-
-
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -42,9 +33,14 @@ TRANSLATION_FEED_ATOM = False
 THEME = "BT3-Flat"
 
 # These need to be here in order to use the BT3-Flat theme
-DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'blog')
+DIRECT_TEMPLATES = ('index', 'tags', 'categories', 'archives', 'blog', 'about')
 TEMPLATE_PAGES = {'blog.html': 'blog.html'}
 POST_LIMIT=10
+
+# Theme options
+
+ARCHIVE_LIST = True
+ARTICLES_HOME_PAGE = True
 
 
 AUTHOR = 'Alex Lord'
