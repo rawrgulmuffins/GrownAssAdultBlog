@@ -5,7 +5,8 @@ from __future__ import unicode_literals
 PLUGIN_PATHS = ['plugins/']
 PLUGINS=['sitemap', 'assets',]
 
-STATIC_PATHS = ['extras']
+STATIC_PATHS = ['extras', 'images']
+
 EXTRA_PATH_METADATA = {
         'extra/google69b9c0096934230f.html': 
             {'path': 'google69b9c0096934230f.html',}}
