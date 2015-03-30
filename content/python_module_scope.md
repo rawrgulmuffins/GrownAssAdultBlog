@@ -1,11 +1,11 @@
 Title: Python Module Scope
 Date: 2015-03-29
 Category: Programming
-Tags: python,scope,language_design
+Tags: python,scope,language_design,mutability
 Authors: Alex Lord
 Summary: You mean a constant was modified?
 
-Scope in Python can be weird. Especially, if you are used to modules going out of scope. My unit tests were failing in a way that truly baffled me and I couldn’t figure out why.
+Scope in Python can be weird. More importantly, scope combined with mutability can lead to some interesting bugs. My unit tests were failing in a way that truly baffled me and I couldn’t figure out why.
 
 
     import IndexRecord
@@ -46,7 +46,7 @@ Scope in Python can be weird. Especially, if you are used to modules going out o
 
 The  `test_add_first_entry_to_ignore` test was failing because it was raising a ValueError from the combination `”9”` : `Test` already being present in the ignored dictionary. This baffled my mind. When I debugged the code I made sure that the record was deleted between the tests so I wasn’t pulling up previous test data. If I set the value of `.files_to_ignore` to an empty dictionary at the start of the test, the test would pass. I was so confused that you could have balanced a shoe on my head and I wouldn’t have noticed.
 
-Some experienced Python programmers will know what I did already. For the rest of us let’s walk through a code example that displays the mistake I made.
+At this point, some of you are going to be face palming. For everyone who's like me let’s walk through a code example to better dissect my shame.
 
     EMPTY_INDEX_RECORD = {"dates":[], 
         "files_to_ignore":{}}
