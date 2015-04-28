@@ -3,7 +3,7 @@ Date: 2015-04-27
 Category: Programming
 Tags: python,python3,porting
 Authors: Alex Lord
-Summary: The future_builtins module
+Summary: The future_builtins module.
 
 #Hello World,
 
