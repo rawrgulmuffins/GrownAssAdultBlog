@@ -65,16 +65,16 @@ This is a classic bait and switch. We’re promised the future and were told tha
 
 It’s of equally important note that the __future__ module does something very similar.
 
-    >>> print "a"
+    print "a"
     a
-    >>> import __future__
-    >>> print "a"
+    import __future__
+    print "a"
     a
-    >>> from __future__ import print_function
-    >>> print "a"
+    from __future__ import print_function
+    print "a"
         File "<stdin>", line 1
             print "a"
-                      ^
+                    ^
     SyntaxError: invalid syntax
 
 So remember, world, that in the python2 universe if you want the future you need to specifically request portions of the future.
@@ -99,7 +99,7 @@ To make your life more sane. Which is slightly insane because having to write tr
 
 If you try to just use ascii in python2.7 you’ll actually get a type error.
 
-        ascii
+    ascii
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     NameError: name 'ascii' is not defined
@@ -107,7 +107,7 @@ If you try to just use ascii in python2.7 you’ll actually get a type error.
 So it’s a bit of a misnomer to say that ascii has a conflict with a python2.7 builtin. In python3 ascii is the replacement for repr's old functionality
 
     ascii(object)
-    As repr(), return a string containing a printable representation of an object, but escape the     non-ASCII characters in the string returned by repr() using \x, \u or \U escapes. This  generates a string similar to that returned by repr() in Python 2.
+    As repr(), return a string containing a printable representation of an object, but escape the non-ASCII characters in the string returned by repr() using \x, \u or \U escapes. This  generates a string similar to that returned by repr() in Python 2.
 
 This doesn’t make a lick of difference for most Python objects.
 
@@ -122,8 +122,8 @@ Unless, of course, you want to program in languages which aren’t American Engl
 ###Python2.7
 
     class  example:
-           def __repr__(self):
-               return "漢字"
+        def __repr__(self):
+            return "漢字"
 
     repr(example)
     '<class __main__.example at 0x10f89f530>'
@@ -141,8 +141,8 @@ For me it was surprising when importing ascii didn't modify the behavior of repr
 ###Python3.4
 
     class  example:
-           def __repr__(self):
-               return "漢字"
+        def __repr__(self):
+            return "漢字"
        
     example()
     漢字
@@ -159,8 +159,8 @@ Just as a side note non-ascii characters are now legal class and function name c
 #### Python 3.4
 
     class  例:
-           def __repr__(self):
-               return "漢字"
+        def __repr__(self):
+            return "漢字"
        
     例
     <class '__main__.例'>
@@ -228,7 +228,7 @@ If you run this on python2.7 you will still be sad.
 
 If you run that previous statement on python3.4 or run the next example in python2 you will be unsad.
      
-     from future_builtins import map
+    from future_builtins import map
     map(str, range(10**100))
 
 If you run this you will also be un-sad.
@@ -300,22 +300,25 @@ you can see that they are very similar. The first major difference is that map's
 
 That being said, what’s different?
 
- map_test_list = [1, 2, 3, 4, 5]
- map_test_list2 = [6, 7, 8, 9, 10]
- map(lambda x, y: (x + y), map_test_list, map_test_list2)
-[7, 9, 11, 13, 15]
+    map_test_list = [1, 2, 3, 4, 5]
+    map_test_list2 = [6, 7, 8, 9, 10]
+    map(lambda x, y: (x + y), map_test_list, map_test_list2)
+    [7, 9, 11, 13, 15]
 
 ###Python 2.7
-map_test_list = [1, 2, 3, 4, 5]
-map(lambda x: x, map_test_list)
-[1, 2, 3, 4, 5]
+
+    map_test_list = [1, 2, 3, 4, 5]
+    map(lambda x: x, map_test_list)
+    [1, 2, 3, 4, 5]
 
 ###Python 3.4
-map_test_list = [1, 2, 3, 4, 5]
-map(lambda x: x, map_test_list)
-<map object at 0x102dc83c8>
+
+    map_test_list = [1, 2, 3, 4, 5]
+    map(lambda x: x, map_test_list)
+    <map object at 0x102dc83c8>
 
 Again, the big change from python2 to 3 is that map returns a generator so that things are lazy loaded to keep sadness at bay.
+
 ##oct
 
 [“Works like the built-in oct(), but instead of __oct__() it will use the __index__() method on its argument to get an integer that is then converted to octal.”](https://docs.python.org/2/library/future_builtins.html)
