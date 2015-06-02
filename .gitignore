@@ -12,3 +12,6 @@ cache/
 
 # pelican ignores
 output/
+
+# Template and plugins
+BT3-Flat
