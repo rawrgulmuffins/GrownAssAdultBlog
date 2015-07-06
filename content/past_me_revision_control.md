@@ -119,7 +119,7 @@ If you really want to dive deep into git (which is not my suggestion for first s
 
 If you want to know more about distributed vs central revision control [Joel Spolsky's tutorial on mercurial is very nifty.](http://hginit.com/)
 
-# Go Find Hero’s
+# Go Find Heroes
 
 
 There are some really awesome people out on the interwebs and a lot of them talk about being better programmers / engineers. 
