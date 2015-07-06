@@ -25,7 +25,7 @@ There’s all kinds of things that you get from revision control but here’s th
 5. No really, you’ll never have to worry about losing code again.
 6. If you have a computer with internet access you can download your code in under a minute.
 
-Sold? Alright, sold. Here’s the nitty gritty you’ll need to know, Past Me.
+Sold? Alright, sold. Here’s the nitty gritty factoids you’ll need to know, Past Me.
 
 Git comes with a lot of magic commands which can be super useful but realistically for a student the commands you’ll need to know about are
 
@@ -39,7 +39,7 @@ Git comes with a lot of magic commands which can be super useful but realistical
 
 Everything else is added complexity that, while useful, isn't required. And to anyone who know’s git out there, I know I know, I’m not talking about  branches yet. But you, my advanced friend, have never watched a revision control newbie struggle with branching. 
 
-For this example we're going to use [bitbucket](https://bitbucket.org/) to store git repositories not local to our machine. If you want to follow this example on your computer go to [bitbucket](https://bitbucket.org/) and register an account. I love my some github (I would suggest eventually making an account but it's not needed right now) but all source code repositories have to be public on github and if your assignments start showing up in a publicly indexable space you're instructors will take your grades into a dark alley and beat with a billy club.
+For this example we're going to use [bitbucket](https://bitbucket.org/) to store git repositories not local to our machine. If you want to follow this example on your computer go to [bitbucket](https://bitbucket.org/) and register an account. I love my some github (I would suggest eventually making an account but it's not needed right now) but all source code repositories have to be public on github and if your assignments start showing up in a publicly indexable space you're instructors will take your grades into a dark alley and beat them with a billy club.
 
 Next time you get an assignment for class head over to bitbucket [and create a repository for that assignment.](https://confluence.atlassian.com/display/BITBUCKET/Create+a+repository) This example is going to use a linked list assignment (yay CS145).
 
@@ -54,7 +54,7 @@ Now that we're in this repository we can start modifying code
  
     $ cd linked_list_assignment
     $ echo "#This is a basic assignment to create a linked list in Python
-" >> README.md
+    " >> README.md
 
 and now comes the fun bits,
 
