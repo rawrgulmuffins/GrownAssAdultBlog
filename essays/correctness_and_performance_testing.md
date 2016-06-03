@@ -374,14 +374,14 @@ a "large input" benchmark.
 
 Which, when run, produced this output.
 
-test_large_input_speed[test_func3]                                6,092,073.9998 (>1000.0)       9,215,803.0020 (>1000.0)       6,815,266.4239 (>1000.0)      728,120.9603 (>1000.0)       6,501,765.0049 (>1000.0)    1,070,624.2520 (>1000.0)         28;2     151           1
-test_large_input_speed[test_func2]                            1,680,199,910.9957 (>1000.0)   1,702,819,657.9995 (>1000.0)   1,691,921,799.1992 (>1000.0)    8,479,934.4638 (>1000.0)   1,689,919,190.9979 (>1000.0)   10,792,933.2462 (>1000.0)          2;0       5           1
-test_large_input_speed[test_func1]                           12,934,396,921.9990 (>1000.0)  13,668,151,101.9997 (>1000.0)  13,305,998,574.3996 (>1000.0)  274,037,337.0935 (>1000.0)  13,316,970,378.9972 (>1000.0)  370,253,495.7483 (>1000.0)          2;0       5           1
-test_large_input_speed[test_func0]                           19,585,742,333.0017 (>1000.0)  19,765,584,692.9993 (>1000.0)  19,698,525,190.2021 (>1000.0)   72,823,859.1132 (>1000.0)  19,713,395,115.0026 (>1000.0)  105,883,734.9992 (>1000.0)          1;0       5           1
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    test_large_input_speed[test_func3]                                6,092,073.9998 (>1000.0)       9,215,803.0020 (>1000.0)       6,815,266.4239 (>1000.0)      728,120.9603 (>1000.0)       6,501,765.0049 (>1000.0)    1,070,624.2520 (>1000.0)         28;2     151           1
+    test_large_input_speed[test_func2]                            1,680,199,910.9957 (>1000.0)   1,702,819,657.9995 (>1000.0)   1,691,921,799.1992 (>1000.0)    8,479,934.4638 (>1000.0)   1,689,919,190.9979 (>1000.0)   10,792,933.2462 (>1000.0)          2;0       5           1
+    test_large_input_speed[test_func1]                           12,934,396,921.9990 (>1000.0)  13,668,151,101.9997 (>1000.0)  13,305,998,574.3996 (>1000.0)  274,037,337.0935 (>1000.0)  13,316,970,378.9972 (>1000.0)  370,253,495.7483 (>1000.0)          2;0       5           1
+    test_large_input_speed[test_func0]                           19,585,742,333.0017 (>1000.0)  19,765,584,692.9993 (>1000.0)  19,698,525,190.2021 (>1000.0)   72,823,859.1132 (>1000.0)  19,713,395,115.0026 (>1000.0)  105,883,734.9992 (>1000.0)          1;0       5           1
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-(*) Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
-=========================================================================================== 22 passed in 293.13 seconds ===========================================================================================
+    (*) Outliers: 1 Standard Deviation from Mean; 1.5 IQR (InterQuartile Range) from 1st Quartile and 3rd Quartile.
+    =========================================================================================== 22 passed in 293.13 seconds ===========================================================================================
 
 These benchmarks confirmed what I believed to be true (The reference solution
 is significantly superior to all others, the LRU solution second best) but now
@@ -393,16 +393,16 @@ This brings me to a suggestion of how to add benchmark tests to your project
 in a sane fashion. My suggestions is that performance tests and correctness
 tests end up in two separate folders
 
-project 
-├── project
-│   ├── product_not_at_index.py # This contains normal unit tests
-├── correctness_tests
-│   ├── tests.py # This contains normal unit tests
-├── performance_tests
-    # This contains previous implementations to act as controls to run against the current solution.
-│   ├── previous_product_not_at_index_solutions.py 
-    # this file contains the actual benchmark tests with specific input cases.
-│   ├── tests.py
+    project 
+    ├── project
+    │   ├── product_not_at_index.py # This contains normal unit tests
+    ├── correctness_tests
+    │   ├── tests.py # This contains normal unit tests
+    ├── performance_tests
+        # This contains previous implementations to act as controls to run against the current solution.
+    │   ├── previous_product_not_at_index_solutions.py 
+        # this file contains the actual benchmark tests with specific input cases.
+    │   ├── tests.py
 
 The other potential solution is to to have correctness_tests and
 performance_tests live in the same test files and use the `--benchmark-skip` 
