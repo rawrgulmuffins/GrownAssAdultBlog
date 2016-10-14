@@ -1,4 +1,4 @@
-# How To Podcast (James T Green, Max Temkin)
+# How To Podcast (James T Green, Max Temkin, Alex Cox)
 
 # What's your Story
 * "Steve Jobs announcing that ITunes now hosts podcasts."
