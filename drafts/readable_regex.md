@@ -144,6 +144,9 @@ at the same time.
 
     r'^(Carrier board|Internal)\s+(\w+\d+)/([a-z]+\d+)\s+is\s+(.+)\s+FW:([\w\. ]+)\s+SN:([\w\-]+),?\s+(\d+)\s+blks\n$')
 
+
+# In Conclusion
+
 It takes up one line but the trade offs are that 
 
     1. you can't tell what any of the logical groupings are
@@ -157,6 +160,22 @@ Lastly the original is just ugly. There's no nice way to say it.
 But you don't have to live with ugly regex. There is another way, another path.
 You can live a more beautiful and functional regular expression life by
 following the simple steps listed above?
+
+# Flask Example
+And just to prove that this isn't only my little time in Large Dell EMC here's
+an example from [Flask](https://github.com/pallets/werkzeug/blob/master/werkzeug/routing.py#L118).
+
+_rule_re = re.compile(r'''
+    (?P<static>[^<]*)                           # static rule data
+    <
+    (?:
+        (?P<converter>[a-zA-Z_][a-zA-Z0-9_]*)   # converter name
+        (?:\((?P<args>.*?)\))?                  # converter arguments
+        \:                                      # variable delimiter
+    )?
+    (?P<variable>[a-zA-Z_][a-zA-Z0-9_]*)        # variable name
+    >
+''', re.VERBOSE)
 
 Someday you will thank your readability conciouse past self when frantically
 debugging some regular expression soup you generated on auto pilot two years
